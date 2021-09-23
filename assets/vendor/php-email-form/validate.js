@@ -127,11 +127,19 @@ jQuery(document).ready(function($) {
         } else {
           this_form.find('.loading').slideUp();
           this_form.find('.error-message').slideDown().html("Message not sent");
+          this_form.find("input:not(input[type=submit]), textarea").val('');
+          setTimeout(()=>{
+            this_form.find('.error-message').slideUp()
+          },5000)
         }
       },
       error: function(msg){  
         this_form.find('.loading').slideUp();
         this_form.find('.error-message').slideDown().html("An error occured");
+        this_form.find("input:not(input[type=submit]), textarea").val('');
+        setTimeout(()=>{
+          this_form.find('.error-message').slideUp()
+        },5000)
       }
     });
     return false;
