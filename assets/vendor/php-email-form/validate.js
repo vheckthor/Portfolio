@@ -90,7 +90,14 @@ jQuery(document).ready(function($) {
       }
     });
     if (ferror) return false;
-    else var str = $(this).serialize();
+    else {
+      var str = $(this).serializeArray();
+      var strObject = {}
+      str.forEach(
+        x=>strObject.hasOwnProperty(x.name)?strObject[x.name]=[strObject[x.name],x.value].flat():strObject[x.name]=x.value
+      ); 
+    }
+
 
     var this_form = $(this);
     var action = $(this).attr('action');
@@ -107,17 +114,24 @@ jQuery(document).ready(function($) {
     
     $.ajax({
       type: "POST",
-      url: action,
-      data: str,
+      url: 'https://vheckthorblog.herokuapp.com/data',
+      data: strObject,
       success: function(msg) {
-        if (msg == 'OK') {
+        if (msg.success == true) {
           this_form.find('.loading').slideUp();
           this_form.find('.sent-message').slideDown();
           this_form.find("input:not(input[type=submit]), textarea").val('');
+          setTimeout(  function(){
+            this_form.find('.sent-message').slideUp()
+          },5000)
         } else {
           this_form.find('.loading').slideUp();
-          this_form.find('.error-message').slideDown().html(msg);
+          this_form.find('.error-message').slideDown().html("Message not sent");
         }
+      },
+      error: function(msg){  
+        this_form.find('.loading').slideUp();
+        this_form.find('.error-message').slideDown().html("An error occured");
       }
     });
     return false;
