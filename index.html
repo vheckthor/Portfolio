@@ -53,9 +53,6 @@
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#service">Services</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link js-scroll" href="#work">Work</a>
-          </li> -->
           <li class="nav-item">
             <!-- <a class="nav-link js-scroll" href="#blog">Blog</a> -->
           </li>
@@ -78,7 +75,7 @@
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
           <h1 class="intro-title mb-4">I am Victor Adebayo</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">Software Engineer,Web Developer,Hardware Engineer</span><strong class="text-slider"></strong></p>
+          <p class="intro-subtitle"><span class="text-slider-items">Software Engineer,Web Developer,Hardware Engineer,Fullstack Developer</span><strong class="text-slider"></strong></p>
           <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
       </div>
@@ -98,16 +95,16 @@
                   <div class="row">
                     <div class="col-sm-6 col-md-5">
                       <div class="about-img"  >
-                        <img src="assets/img/mypicture.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                        <img src="assets/img/mypictures/1" class="img-fluid rounded b-shadow-a" alt="my picture" id="mypictures">
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-7">
                       <div class="about-info">
                         <p><span class="title-s">Name: </span> <span>Victor Adebayo</span></p>
-                        <p><span class="title-s">Profile: </span> <span>Software Engineer</span></p>
+                        <p><span class="title-s">Profile: </span> <span>Senior Software Engineer</span></p>
                         <p><span class="title-s">Email: </span> <span><a href="mailto:adebayovicktor@gmail.com" type="email">adebayovicktor@gmail.com</a></span></p>
-                        <p><span class="title-s">Azure Repo: </span> <span>https://dev.azure.com/<br>adebayovicktor/</span></p>
-                        <p><span class="title-s">Github: </span> <span>https://github.com/vheckthor</span></p>
+                        <p><span class="title-s">Azure Repo: </span> <span><a href="https://dev.azure.com/adebayovicktor">https://dev.azure.com/adebayovicktor</a></span></p>
+                        <p><span class="title-s">Github: </span> <span><a href="https://github.com/vheckthor">https://github.com/vheckthor</a></span></p>
                         <p><span class="title-s">Phone: </span> <span><a href="tel:+2347039466998" type="tel">+2347039466998</a></span></p>
                       </div>
                     </div>
@@ -443,7 +440,7 @@
                       <ul>
                         <li><a href="https://www.facebook.com/adebayo.vicktor"><span class="ico-circle"><i class="ion-social-facebook"></i></span></a></li>
                         <li><a href="https://twitter.com/Adebayovicktor"><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
-                        <li><a href="linkedin.com/in/victor-adebayo-925a34b7"><span class="ico-circle"><i class="ion-social-linkedin"></i></span></a></li>
+                        <li><a href="https://linkedin.com/in/victor-adebayo-925a34b7"><span class="ico-circle"><i class="ion-social-linkedin"></i></span></a></li>
                       </ul>
                     </div>
                   </div>
@@ -497,6 +494,9 @@
     let str = `I am a  Software Engineer and IT Support Specialist with over ${yearsOfExperience} years of experience in computer hardware repairs and software repairs, and over ${codingYears} years experience with developing software with high standards and interacting with multiple stakeholders from technical and non-technical backgrounds, ensuring clarity, quality, and continuous delivery. I have a  First-Rate Certification as a Software Engineer and a Bachelor's Degree in Biochemistry and work with technologies such as C#, Javascript, React, Python, Entity Framework, SQL, AZURE and Microsoft Server SQL Databases. I am a self-starter with a proven ability to leverage multiple technologies to build interactive and innovative applications.`
     document.getElementById('exp').innerHTML = yearsOfExperience;
     document.getElementById('mal').innerHTML = str
+    let randomNumber = Math.floor(Math.random() * 4)+1;
+    let url = "assets/img/mypictures/"+ randomNumber + ".jpg";
+    document.getElementById("mypictures").src = url;
   </script>
 </body>
 
